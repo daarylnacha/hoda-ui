@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Hoda UI</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/hoda-ui.css">
+	<script src="assets/jquery.js"></script>
+	<script src="assets/jquery-ui.js"></script>
+	<script src="assets/hoda-ui.js"></script>
+	<script src="assets/scripts.js"></script>
+	</head>
+
+<body class="hoda padding">
+	<div class="hoda frame small bevel shadow border">
+		<div class="title">This is title</div>
+			<label>Small Frame with bevel and shadow</label>
+		</div>
+		<div class="hoda frame small border shadow">
+			<label>Small Simple Frame</label>
+		</div>
+		<div class="hoda frame medium shadow">
+			<label>Medium shadow frame</label>
+		</div>
+		<div class="hoda frame large bevel">
+			<label>Large bevel frame</label>
+		</div>
+
+		<div class ="hoda frame large shadow border bevel" style="width:1024px;height:2000px;padding:10px">
+			<div class="title" style="position:relative;top:-10px;">Buttons</div>
+			<div class="panel-container">
+				<label>Buttons</label></br>
+				<table>
+					<tr>
+						<td><label class="tab">Normal button</label></td><td><button class="">Button</button><br></td>
+					</tr>
+					<tr>
+						<td><label class="tab">Yellow button</label></td><td><button class="yellow ">Button</button><br></td>
+					</tr>
+					<tr>
+						<td><label class="tab">Red button</label></td><td><button class="red ">Button</button><br></td>
+					</tr>
+					<tr>
+						<td><label class="tab">Green button</label></td><td><button class="green ">Button</button><br></td>
+					</tr>
+					<tr>
+						<td><label class="tab">Blue button</label></td><td><button class="blue ">Button</button><br></td>
+					</tr>
+					<tr>
+						<td><label class="tab">DarkBlue button</label></td><td><button class="darkblue ">Button</button><br></td>
+					</tr>
+			</table>
+				<br>
+				<label>Button Groups</label>
+				<div class="button-group">
+					<button>Button One</button>
+					<button>Button Two</button>
+					<button>Button Three</button>
+				</div>
+				<div class="button-group">
+					<button class="red">Button Red</button>
+					<button class="green">Button Green</button>
+					<button class="blue">Button Blue</button>
+					<button class="yellow">Button Yellow</button>
+				</div>
+				<br><br>
+				<label>Button Groups Vertical</label>
+				<div class="vertical-button-group" style="width:100px;">
+					<button class="">Button One</button>
+					<button class="">Button Two</button>
+					<button class="">Button Three</button>
+					<button class="">Button Four</button>
+				</div>
+				<br>
+				<label>Button Icon</label><br>
+				<button class="icon"><i class="fa fa-bar-chart"></i></button>
+				<button class="icon darkblue"><i class="fa fa-link"></i></button>
+				<button class="icon green"><i class="fa fa-repeat"></i></button>
+				<div class="button-group">
+					<button class="icon"><i class="fa fa-header"></i></button>
+					<button class="icon"><i class="fa fa-indent"></i></button>
+					<button class="icon"><i class="fa fa-italic"></i></button>
+					<button class="icon"><i class="fa fa-text-height"></i></button>
+				</div>
+				<button class="round darkblue"><i class="fa fa-link"></i></button>
+				<button class="round green"><i class="fa fa-repeat"></i></button>
+				<button class="round red"><i class="fa fa-link"></i></button>
+				<button class="round yellow"><i class="fa fa-repeat"></i></button>
+				<br>
+				<label>Labeled Icon</label><br>
+				<button class="labeled"><i class="fa fa-repeat"></i> Repeat Again</button>
+				<button class="labeled-right"><i class="fa fa-header"></i> Header is Right</button>
+				<br>
+				<label>Hollow Button</label><br>
+				<button class="hollow">For Now</button>
+				<button class="hollow labeled"><i class="fa fa-play-circle-o"></i>You need to breathe</button>
+				<button class="hollow"><i class="fa fa-random"></i> Random</button>
+				<br>
+				<label>Choice Button</label><br>
+				<div class="button-choice">
+					<button>Cool</button>
+					<span>or</span>
+					<button>Awesome</button>
+				</div>
+				<br><br>
+				<div class="button-choice">
+					<button class="red">Red</button>
+					<span>or</span>
+					<button class="blue">Blue</button>
+				</div>
+				<div class="clear"></div>
+				<label>Selected Button</label>
+				<div id="button-group-one" class="button-group select-button">
+					<button>Not Selected</button>
+					<button class="selected">Selected</button>
+					<button>Not Selected</button>
+					<button>Not Selected</button>
+					<button class="disabled">Disabled</button>
+				</div>
+				<div class="clear"></div>
+				<table>
+					<tr>
+						<td>
+							<label>JSButton</label>
+						</td>
+
+						<td>
+							<button id="button-one">Button Color Js</button><br><br>
+
+							<div id="button-dropdown" class="button-dropdown">
+								<button>Button with Dropdown</button>
+								<ul>
+									<li>Right on</li>
+									<li>Nail it</li>
+									<li>Oh wowwow</li>
+									<li>A lot to much</li>
+								</ul>
+							</div>
+							<br>
+							<button id="button-wider">Wider Button</button><br><br>
+							<button id="button-taller">Taller Button Blue</button><br><br>
+							<button id="button-onclick">Button with click handler</button><br><br>
+							<br><br>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="clear"></div>
+		</div>
+	<div class="clear"></div>
+
+	<div class="hoda frame large shadow bevel border">
+		<div class="title">Form Elements</div>
+			<table>
+				<tr>
+					<td>
+						<label>Checkbox</label>&nbsp;
+					</td>
+					<td>
+						<label class="input checkbox">
+							<input type="checkbox"></input>
+							<span>Check Me</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Radio</label>
+					</td>
+					<td>
+						<label class="input radio">
+							<input type="radio" name="radio1"></input>
+							<span>Radio One</span>
+						</label>
+						<label class="input radio">
+							<input type="radio" name="radio1"></input>
+							<span>Radio Two</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Checkbox Slide</label>
+					</td>
+					<td>
+						<label class="input checkbox-slide">
+							<input type="checkbox"></input>
+							<span class="on">Checkbox slide on</span>
+							<span class="off">Checkbox slide off</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Dropdown</label>
+					</td>
+					<td>
+						<select id="selectone">
+							<option value="option1" >Option one</option>
+							<option value="option2" >Option two</option>
+							<option value="option3" >Option three</option>
+							<option value="option4" >Option four</option>
+							<option value="option5" >Option five</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Spinner</label>
+					</td>
+					<td>
+						<div id="spinnerone" class="" data-value="74"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>done</label>
+					</td>
+					<td>
+						<label>ABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZ</label>
+					</td>
+				</tr>
+			</table>
+			<div class="clear"></div>
+	</div>
+
+
+	<div class="hoda frame shadow bevel border" style="height:700px;width:900px;">
+		<div class="title">Panels</div>
+		<div class="panel-container" id="pc01">
+			<div class="panel-horizontal" data-resize="true" data-backcolor="#d1d1d1" data-width="100px">
+				<div class="hode"></div>
+			</div>
+			<div class="panel-horizontal" data-resize="true" data-backcolor="#d1d1d1" data-height="100px">
+			</div>
+			<div class="panel-horizontal" data-backcolor="#d1d1d1">
+			</div>
+			<div class="panel-vertical" data-resize="true" data-backcolor="#d1d1d1">
+				<div class="holla">
+					<label style="color:#fff;">Holla</label>
+				</div>
+			</div>
+			<div class="panel-vertical" data-resize="true" data-backcolor="#d1d1d1">
+				<div class="panel-container" id="pc02">
+					<div class="panel-horizontal faraway" data-resize="true" data-backcolor="#d1d1d1" data-width="100px">
+					</div>
+					<div class="panel-horizontal" data-backcolor="#d1d1d1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</body>
+</html>

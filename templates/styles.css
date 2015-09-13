@@ -1,0 +1,724 @@
+@import "assets/hoda-ui-reset.css";
+@import "assets/Font-Awesome/css/font-awesome.css";
+body {
+  margin: 0;
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #000000;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+* {
+  box-sizing: border-box;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+div {
+  margin: 10px;
+}
+br {
+  margin-top: 20px;
+}
+th,
+tr,
+td {
+  padding: 10px;
+}
+.radius {
+  border-radius: 5px;
+}
+.bevel-left {
+  border-radius: 5px 0 0 5px;
+}
+.bevel-right {
+  border-radius: 0 5px 5px 0;
+}
+.bevel-top {
+  border-radius: 5px 5px 0 0;
+}
+.bevel-bottom {
+  border-radius: 0 0 5px 5px;
+}
+.textshadow {
+  text-shadow: 1px 1px 3px #a7a7a7;
+}
+.textinset {
+  text-shadow: 1px 1px 3px #a7a7a7 inset;
+}
+.boxshadow {
+  box-shadow: 1px 1px 3px #a7a7a7;
+}
+.bottomshadow {
+  box-shadow: 0 3px 10px #a7a7a7;
+}
+.contentblockabs {
+  content: "";
+  display: block;
+  position: absolute;
+}
+body.hoda {
+  margin: 0;
+  padding: 0;
+}
+.hoda.bevel {
+  border-radius: 5px;
+}
+.hoda.padding {
+  padding: 10px;
+}
+.hoda.shadow {
+  box-shadow: 1px 1px 3px #a7a7a7;
+}
+.hoda .clear {
+  clear: both;
+  height: 20px;
+}
+.hoda.frame {
+  position: relative;
+  background-color: #ffffff;
+  color: inherit;
+}
+.hoda.frame.border {
+  border: 1px solid #cacaca;
+}
+.hoda.frame.small {
+  width: 500px;
+  height: 100px;
+}
+.hoda.frame.medium {
+  width: 700px;
+  height: 200px;
+}
+.hoda.frame.large {
+  width: 900px;
+  height: 500px;
+}
+.hoda.frame.fluid {
+  width: 100%;
+  height: 100%;
+}
+.hoda.frame .title {
+  margin: 0 auto 10px auto;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  width: 50%;
+  background-color: #cacaca;
+  color: #5f5f5f;
+  font-weight: bold;
+  cursor: default;
+}
+.hoda label {
+  font-weight: bold;
+  color: #5f5f5f;
+}
+.hoda label.tab {
+  margin-right: 20px;
+}
+.hoda button {
+  padding: 7px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  background-color: #cacaca;
+  color: #5f5f5f;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px #a7a7a7 inset;
+}
+.hoda button:hover {
+  box-shadow: 0 3px 10px #a7a7a7;
+  background-color: #b1b1b1;
+  color: #525252;
+}
+.hoda button:active {
+  background-color: #979797;
+  color: #464646;
+}
+.hoda button.icon {
+  padding: 7px;
+}
+.hoda button.round {
+  border-radius: 50%;
+  padding: 7px;
+}
+.hoda button.selected {
+  background-color: #b1b1b1;
+  color: #ffffff;
+}
+.hoda button.disabled {
+  background-color: #e3e3e3;
+  color: #929292;
+  cursor: default;
+}
+.hoda button.disabled:hover {
+  box-shadow: none;
+}
+.hoda button.disabled:active {
+  box-shadow: none;
+}
+.hoda button.labeled {
+  position: relative;
+  padding-left: 40px;
+}
+.hoda button.labeled i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 7px 10px;
+  background-color: #b1b1b1;
+  color: #525252;
+  border-radius: 5px 0 0 5px;
+}
+.hoda button.labeled-right {
+  position: relative;
+  padding-right: 40px;
+}
+.hoda button.labeled-right i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 7px 10px;
+  background-color: #b1b1b1;
+  color: #525252;
+  border-radius: 0 5px 5px 0;
+}
+.hoda button.hollow {
+  background-color: inherit;
+  color: #5f5f5f;
+  border: 1px solid #cacaca;
+}
+.hoda button.hollow:hover {
+  box-shadow: none;
+  border: 1px solid #979797;
+}
+.hoda button.hollow:active {
+  box-shadow: 1px 1px 7px #dadada inset;
+}
+.hoda button.yellow {
+  background-color: #f8d053;
+  color: #ffffff;
+}
+.hoda button.yellow:hover {
+  box-shadow: 0 3px 10px #a7a7a7;
+  background-color: #f6c322;
+  color: #f2f2f2;
+}
+.hoda button.yellow:active {
+  background-color: #dca909;
+  color: #e6e6e6;
+}
+.hoda button.red {
+  background-color: #f55753;
+  color: #ffffff;
+}
+.hoda button.red:hover {
+  box-shadow: 0 3px 10px #a7a7a7;
+  background-color: #f22823;
+  color: #f2f2f2;
+}
+.hoda button.red:active {
+  background-color: #d6110c;
+  color: #e6e6e6;
+}
+.hoda button.green {
+  background-color: #10cfbd;
+  color: #ffffff;
+}
+.hoda button.green:hover {
+  box-shadow: 0 3px 10px #a7a7a7;
+  background-color: #0ca092;
+  color: #f2f2f2;
+}
+.hoda button.green:active {
+  background-color: #097067;
+  color: #e6e6e6;
+}
+.hoda button.blue {
+  background-color: #48b0f7;
+  color: #ffffff;
+}
+.hoda button.blue:hover {
+  box-shadow: 0 3px 10px #a7a7a7;
+  background-color: #179bf5;
+  color: #f2f2f2;
+}
+.hoda button.blue:active {
+  background-color: #097fd0;
+  color: #e6e6e6;
+}
+.hoda button.darkblue {
+  background-color: #6d5cae;
+  color: #ffffff;
+}
+.hoda button.darkblue:hover {
+  box-shadow: 0 3px 10px #a7a7a7;
+  background-color: #564790;
+  color: #f2f2f2;
+}
+.hoda button.darkblue:active {
+  background-color: #42366e;
+  color: #e6e6e6;
+}
+.hoda .button-dropdown {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.hoda .button-dropdown .button-group {
+  margin: 0;
+  padding: 0;
+}
+.hoda .button-dropdown > ul {
+  padding: 3px;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #cacaca;
+  border-top: 0px;
+  background-color: #ffffff;
+  color: #5f5f5f;
+  box-shadow: 1px 1px 3px #a7a7a7;
+  z-index: 999;
+}
+.hoda .button-dropdown > ul > li {
+  padding: 3px;
+  font-weight: bold;
+  height: 1.5em;
+  cursor: pointer;
+}
+.hoda .button-dropdown > ul > li:hover {
+  background-color: #cacaca;
+  color: #5f5f5f;
+}
+.hoda .button-group {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+.hoda .button-group button {
+  float: left;
+  margin: 0;
+  border-radius: 0;
+}
+.hoda .button-group button:first-child {
+  margin-left: inherit;
+  border-radius: 5px 0 0 5px;
+}
+.hoda .button-group button:last-child {
+  margin-right: inherit;
+  border-radius: 0 5px 5px 0;
+}
+.hoda .vertical-button-group button {
+  margin: 0;
+  border-radius: 0;
+  width: 100%;
+  display: block;
+}
+.hoda .vertical-button-group button:first-child {
+  margin-top: inherit;
+  border-radius: 5px 5px 0 0;
+}
+.hoda .vertical-button-group button:last-child {
+  margin-bottom: inherit;
+  border-radius: 0 0 5px 5px;
+}
+.hoda .button-choice {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+}
+.hoda .button-choice button {
+  float: left;
+  margin: 0;
+  border-radius: 0;
+}
+.hoda .button-choice button:first-child {
+  margin-left: inherit;
+  border-radius: 5px 0 0 5px;
+}
+.hoda .button-choice button:last-child {
+  margin-right: inherit;
+  border-radius: 0 5px 5px 0;
+}
+.hoda .button-choice span {
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  float: left;
+  z-index: 9;
+  background-color: #ffffff;
+  color: #5f5f5f;
+  font-weight: bold;
+  box-sizing: content-box;
+  padding: 5px;
+  width: 13px;
+  margin-left: -10px;
+  margin-right: -10px;
+  top: 3px;
+}
+.hoda .button-choice button {
+  z-index: 1;
+}
+.hoda input[type=checkbox] {
+  display: none;
+}
+.hoda input[type=checkbox]:checked + span:after {
+  opacity: 1;
+}
+.hoda input[type=radio] {
+  display: none;
+}
+.hoda input[type=radio]:checked + span:after {
+  opacity: 1;
+}
+.hoda label.input {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.36em;
+  cursor: pointer;
+}
+.hoda label.checkbox:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #cacaca;
+}
+.hoda label.checkbox span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 6px;
+  height: 3px;
+  border: 3px solid #5f5f5f;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  background-color: inherit;
+  color: inherit;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+.hoda label.radio:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #cacaca;
+  border-radius: 50%;
+}
+.hoda label.radio span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #5f5f5f;
+  color: inherit;
+  border-radius: 50%;
+  opacity: 0;
+}
+.hoda label.checkbox-slide {
+  padding-left: 50px;
+}
+.hoda label.checkbox-slide span.on {
+  display: none;
+}
+.hoda label.checkbox-slide span.off {
+  display: block;
+}
+.hoda label.checkbox-slide span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: inherit;
+  border: 1px solid #cacaca;
+  box-shadow: 1px 1px 3px #a7a7a7;
+}
+.hoda label.checkbox-slide span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 1em;
+  background-color: #ffffff;
+  color: inherit;
+  border: 1px solid #cacaca;
+  border-radius: 7px;
+}
+.hoda label.checkbox-slide input[type=checkbox]:checked + span:after {
+  top: -3px;
+  left: 28px;
+}
+.hoda label.checkbox-slide input[type=checkbox]:checked + span:before {
+  background-color: #cacaca;
+  color: inherit;
+}
+.hoda label.checkbox-slide input[type=checkbox]:checked ~ span.off {
+  display: none;
+}
+.hoda label.checkbox-slide input[type=checkbox]:checked + span.on {
+  display: block;
+}
+.hoda .frame > .panel-container {
+  margin-top: 25px;
+}
+.hoda .panel-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.hoda .panel-horizontal {
+  position: relative;
+}
+.hoda .panel-horizontal[data-resize=true] {
+  border-right: 1px solid #000000;
+}
+.hoda .panel-horizontal > .handle {
+  opacity: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  margin: 0;
+  cursor: col-resize;
+  z-index: 9;
+  background-color: #5f5f5f;
+  color: inherit;
+}
+.hoda .panel-vertical {
+  position: relative;
+}
+.hoda .panel-vertical[data-resize=true] {
+  border-top: 1px solid #000000;
+}
+.hoda .panel-vertical > .handle {
+  opacity: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  cursor: row-resize;
+  z-index: 9;
+  background-color: #5f5f5f;
+  color: inherit;
+}
+.hoda select {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: inherit;
+}
+.hoda .hoda-select {
+  position: relative;
+  padding: 3px;
+  margin: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: inherit;
+  border: 1px solid #cacaca;
+}
+.hoda .hoda-select:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  right: 3px;
+  width: 1em;
+  height: 1em;
+  border-top: 0.5em solid #5f5f5f;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  box-sizing: border-box;
+}
+.hoda .hoda-select > span,
+.hoda .hoda-select > ul > li {
+  font-weight: bold;
+  color: #5f5f5f;
+}
+.hoda .hoda-select > ul {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 3px;
+  background-color: #ffffff;
+  color: inherit;
+  border: 1px solid #cacaca;
+  box-shadow: 1px 1px 3px #a7a7a7;
+  z-index: 999;
+}
+.hoda .hoda-select > ul > li {
+  padding: 3px;
+}
+.hoda .hoda-select > ul > li[data-selected=true] {
+  background-color: #e3e3e3;
+  color: #5f5f5f;
+}
+.hoda .hoda-select > ul > li:hover {
+  background-color: #cacaca;
+  color: #5f5f5f;
+}
+.hoda .hoda-spinner {
+  position: relative;
+  margin: 0;
+  height: 1em;
+}
+.hoda .hoda-spinner .spinner-line {
+  margin: 0;
+  padding: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  height: 7px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+}
+.hoda .hoda-spinner .spinner-filler {
+  margin: 0;
+  padding: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #cacaca;
+  color: inherit;
+  height: 100%;
+  width: 0%;
+}
+.hoda .hoda-spinner .spinner-button {
+  margin: 0;
+  padding: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #ffffff;
+  color: inherit;
+  border: 1px solid #cacaca;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px #a7a7a7;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.hoda .hoda-spinner .spinner-label {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-weight: bold;
+  background-color: inherit;
+  color: #5f5f5f;
+  box-sizing: border-box;
+}
+.hoda .menubar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  background-color: #ececec;
+  color: #5f5f5f;
+  box-shadow: 1px 1px 3px #a7a7a7;
+  cursor: default;
+}
+.hoda .menubar ul::selection,
+.hoda .menubar li::selection {
+  background-color: transparent;
+  color: inherit;
+}
+.hoda .menubar > ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.hoda .menubar > ul > li {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 7px;
+}
+.hoda .menubar > ul > li:hover {
+  background-color: #dadada;
+  color: #464646;
+}
+.hoda .menubar > ul > li:hover > ul {
+  display: block;
+}
+.hoda .menubar > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #dadada;
+  color: #464646;
+  box-shadow: 1px 1px 3px #a7a7a7;
+}
+.hoda .menubar > ul > li > ul > li {
+  position: relative;
+  padding: 10px 26px;
+  min-width: 150px;
+}
+.hoda .menubar > ul > li > ul > li.menuitem-normal:hover,
+.hoda .menubar > ul > li > ul > li.menuitem-check:hover {
+  background-color: #ececec;
+  color: #5f5f5f;
+}
+.hoda .menubar > ul > li > ul > li.menuitem-separator {
+  height: 2px;
+  border-bottom: 1px solid #b8b8b8;
+  margin: 3px 0;
+  padding: 0;
+}
+.hoda .menubar > ul > li > ul > li .menuitem-icon {
+  margin: 0;
+  padding: 10px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+}
+.hoda .menubar > ul > li > ul > li.menuitem-check .menuitem-icon {
+  opacity: 0;
+}

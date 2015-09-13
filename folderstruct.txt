@@ -1,0 +1,22 @@
+folder structure
+
+index.js
+|---lib
+|    |--elements
+|    |   |--element.js
+|    |   |--menubar.js
+|    |   |--menuitem.js
+|    |   |--titlebar.js
+|    |   |--...
+|    |
+|    |--utils.js
+|    |--...
+|
+|---templates
+|    |--menubar.tpl
+|    |--menuitem.tpl
+|    |--titlebar.tpl
+|    |--...
+|
+|---node-modules
+|

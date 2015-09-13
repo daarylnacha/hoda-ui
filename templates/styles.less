@@ -1,0 +1,731 @@
+//out :  ./styles.css
+//sourcemap : true
+//compress : true
+
+@import "assets/hoda-ui-reset.css";
+@import "assets/Font-Awesome/css/font-awesome.css";
+
+@bigFontSize: 24px;
+@normalFontSize: 12px;
+@smallFontSize: 8px;
+
+@bigFont : @bigFontSize Arial, Helvetica, sans-serif;
+@normalFont : @normalFontSize Arial, Helvetica, sans-serif;
+@smallFont : @smallFontSize Arial, Helvetica, sans-serif;
+
+@white: #fff;
+@darkblue: #6D5CAE;
+@blue: #48B0F7;
+@green: #10CFBD;
+@red: #F55753;
+@yellow: #F8D053;
+@inherit: inherit;
+
+@textColor: #000;
+@labelColor: #5F5F5F;
+@buttonColor: @labelColor;
+@backgroundColor: @white;
+@mainBackgroundColor:#F5F5F5;
+@buttonBackground: #CACACA;
+@borderColor: #CACACA;
+@shadowColor: #A7A7A7;
+@gradientColor: ;
+@titleBackgroundColor: #CACACA;
+@panelHandleColor: #000;
+@menuBackColor: #ECECEC;
+@menuColor: #5F5F5F;
+@menuHoverColor: #DADADA;
+
+@normalBorder: 1px solid @borderColor;
+@borderRadius: 5px;
+@borderShadow: 1px 1px 3px @shadowColor;
+@insetShadow: 1px 1px 7px lighten(@shadowColor, 20%) inset;
+@textShadow: 1px 1px 3px @shadowColor;
+
+@panelGap: 10px;
+@panelPad: 10px;
+
+body {
+  margin: 0;
+  font: @normalFont;
+  color: @textColor;
+  background-color: @mainBackgroundColor;
+  padding:10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+div {
+  margin:10px;
+}
+
+br {
+  margin-top:20px;
+}
+th, tr, td {
+  padding:10px;
+}
+
+// hoda functions
+.radius {
+  border-radius: @borderRadius;
+}
+.bradius(@r) {
+  border-radius: @r;
+}
+.bevel-left {
+  @r : @borderRadius;
+  border-radius: @r 0 0 @r;
+}
+.bevel-right {
+  @r : @borderRadius;
+  border-radius: 0 @r @r 0;
+}
+.bevel-top {
+  @r : @borderRadius;
+  border-radius: @r @r 0 0;
+}
+.bevel-bottom {
+  @r : @borderRadius;
+  border-radius: 0 0 @r @r;
+}
+.textshadow{
+  text-shadow: @textShadow;
+}
+.textinset{
+  text-shadow: @textShadow inset;
+}
+.boxshadow {
+  box-shadow: @borderShadow;
+}
+.bottomshadow {
+  box-shadow: 0 3px 10px @shadowColor;
+}
+.color(@fore, @back) {
+  background-color:@back;
+  color:@fore;
+}
+.darken(@fore, @back) {
+  background-color: darken(@back, 10%);
+  color: darken(@fore, 5%);
+}
+.darkenmore(@fore, @back) {
+  background-color: darken(@back, 20%);
+  color: darken(@fore, 10%);
+}
+.dimension(@width, @height) {
+  width: @width;
+  height: @height;
+}
+.pos(@x, @y) {
+  top:@x;
+  left:@y;
+}
+.pos(@top, @right, @bottom, @left) {
+  top:@top;
+  left:@left;
+  right:@right;
+  bottom:@bottom;
+}
+.topleft() {
+  top:0;
+  left:0;
+}
+.topright() {
+  top:0;
+  right:0;
+}
+.bottomright() {
+  bottom:0;
+  right:0;
+}
+.bottomleft() {
+  bottom:0;
+  left:0;
+}
+.blockabsolute() {
+  display: block;
+  position: absolute;
+}
+.contentblockabs {
+  content: "";
+  .blockabsolute();
+}
+// main hoda
+body.hoda {
+  margin:0;
+  padding:0;
+}
+
+.hoda {
+  &.bevel {
+    .radius();
+  }
+  &.padding {
+    padding: 10px;
+  }
+  &.shadow {
+    box-shadow: @borderShadow;
+  }
+  .clear {
+    clear:both;
+    height:20px;
+  }
+}
+// Frame
+.hoda.frame {
+  position: relative;
+  .color(@inherit, @backgroundColor);
+  &.border {
+    border: @normalBorder;
+  }
+  &.small {
+    width:500px;
+    height:100px;
+  }
+  &.medium {
+    width:700px;
+    height:200px;
+  }
+  &.large {
+    width:900px;
+    height:500px;
+  }
+  &.fluid {
+    width:100%;
+    height:100%;
+  }
+  .title {
+    margin:0 auto 10px auto;
+    padding:5px;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    width:50%;
+    .color(@labelColor, @titleBackgroundColor);
+    font-weight: bold;
+    cursor: default;
+  }
+}
+// label
+.hoda {
+  label {
+    font-weight: bold;
+    color:@labelColor;
+    &.tab {
+      margin-right:20px;
+    }
+  }
+}
+// button
+.hovers (@fore, @back) {
+  &:hover {
+    .bottomshadow();
+    .darken(@fore, @back);
+  }
+  &:active {
+    .darkenmore(@fore, @back);
+  }
+}
+.hoda {
+  button {
+    padding:7px 20px;
+    font-weight: bold;
+    cursor:pointer;
+    border:none;
+    position:relative;
+    .color(@buttonColor, @buttonBackground);
+    .radius();
+    .textinset();
+    .hovers(@buttonColor, @buttonBackground);
+    &.icon {
+      padding:7px;
+    }
+    &.round {
+      border-radius: 50%;
+      padding:7px;
+    }
+    &.selected {
+      .color(@white, darken(@buttonBackground, 10%));
+    }
+    &.disabled {
+      .color(lighten(@buttonColor, 20%), lighten(@buttonBackground, 10%));
+      cursor: default;
+      &:hover {
+        box-shadow: none;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+    &.labeled {
+      position:relative;
+      padding-left:40px;
+      i {
+        position:absolute;
+        .topleft();
+        height:100%;
+        padding:7px 10px;
+        .darken(@buttonColor, @buttonBackground);
+        .bevel-left();
+      }
+    }
+    &.labeled-right {
+      position:relative;
+      padding-right:40px;
+      i {
+        position:absolute;
+        .topright();
+        height:100%;
+        padding:7px 10px;
+        .darken(@buttonColor, @buttonBackground);
+        .bevel-right();
+      }
+    }
+    &.hollow {
+      .color(@buttonColor, @inherit);
+      border: 1px solid @buttonBackground;
+      &:hover {
+        box-shadow: none;
+        border: 1px solid darken(@buttonBackground, 20%);
+      }
+      &:active {
+        box-shadow: @insetShadow;
+      }
+    }
+    &.yellow {
+      .color(@white, @yellow);
+      .hovers(@white, @yellow);
+    }
+    &.red {
+      .color(@white, @red);
+      .hovers(@white, @red);
+    }
+    &.green {
+      .color(@white, @green);
+      .hovers(@white, @green);
+    }
+    &.blue {
+      .color(@white, @blue);
+      .hovers(@white, @blue);
+    }
+    &.darkblue {
+      .color(@white, @darkblue);
+      .hovers(@white, @darkblue);
+    }
+  }
+  .button-dropdown  {
+    position:relative;
+    margin:0;
+    padding:0;
+    .button-group {
+      margin:0;
+      padding:0;
+    }
+    >ul {
+      padding:3px;
+      .blockabsolute();
+      top: 100%;
+      left:0;
+      border: @normalBorder;
+      border-top:0px;
+      .color(@labelColor, @backgroundColor);
+      .boxshadow();
+      z-index: 999;
+      >li{
+        padding:3px;
+        font-weight:bold;
+        height:1.5em;
+        cursor:pointer;
+        &:hover {
+          .color(@buttonColor, @buttonBackground);
+        }
+      }
+    }
+  }
+
+
+}
+
+.hoda {
+  .button-group {
+    position:relative;
+    display:inline-block;
+    margin:0;
+    vertical-align: middle;
+    button {
+      float:left;
+      margin:0;
+      border-radius: 0;
+      &:first-child {
+        margin-left: inherit;
+        .bevel-left();
+      }
+      &:last-child {
+        margin-right: inherit;
+        .bevel-right();
+      }
+    }
+  }
+  .vertical-button-group {
+    button {
+      margin:0;
+      border-radius: 0;
+      width:100%;
+      display:block;
+      &:first-child {
+        margin-top: inherit;
+        .bevel-top();
+      }
+      &:last-child {
+        margin-bottom: inherit;
+        .bevel-bottom();
+      }
+    }
+  }
+  .button-choice {
+    .button-group();
+    width:100%;
+    position:relative;
+    span {
+      border-radius: 50%;
+      position: relative;
+      display: block;
+      float: left;
+      z-index: 9;
+      .color(@buttonColor, @white);
+      font-weight: bold;
+      box-sizing: content-box;
+      padding: 5px;
+      width: 13px;
+      margin-left: -10px;
+      margin-right: -10px;
+      top: 3px;
+    }
+    button {
+      z-index: 1;
+    }
+  }
+}
+//Checkbox and radiobutton
+.hoda {
+  input[type=checkbox] {
+    display: none;
+    &:checked + span:after {
+      opacity: 1;
+    }
+  }
+   input[type=radio] {
+     display: none;
+     &:checked + span:after{
+       opacity: 1;
+     }
+   }
+  label {
+    &.input {
+      display: inline-block;
+      position:relative;
+      padding-left: 20px;
+      line-height: 1.36em;
+      cursor: pointer;
+    }
+    &.checkbox {
+      &:before {
+        .contentblockabs();
+        .topleft();
+        .dimension(10px, 10px);
+        border: @normalBorder;
+      }
+      span {
+        &:after {
+        .contentblockabs();
+        .pos(2px, 2px);
+        .dimension(6px, 3px);
+        border:3px solid @buttonColor;
+        border-top:none;
+        border-right:none;
+        background:transparent;
+        .color(@inherit, @inherit);
+        transform: rotate(-45deg);
+        opacity:0;
+        }
+      }
+    }
+    &.radio {
+      &:before {
+        .contentblockabs();
+        .topleft();
+        .dimension(10px, 10px);
+        border: @normalBorder;
+        .bradius(50%);
+      }
+      span {
+        &:after {
+          .contentblockabs();
+          .pos(2px, 2px);
+          .dimension(8px, 8px);
+          .color(@inherit, @buttonColor);
+          .bradius(50%);
+          opacity:0;
+        }
+      }
+    }
+    &.checkbox-slide {
+      padding-left: 50px;
+      span {
+        &.on {
+          display:none;
+        }
+        &.off {
+          display:block;
+        }
+        &:after {
+          @half : ((@normalFontSize*1.5) - @normalFontSize)/2;
+          .contentblockabs();
+          .pos(-@half, -@half);
+          .dimension(1.5em, 1.5em);
+          .bradius(50%);
+          .color(@inherit, @white);
+          border: @normalBorder;
+          box-shadow: 1px 1px 3px @shadowColor;
+        }
+        &:before {
+          .contentblockabs();
+          .topleft();
+          .dimension(40px, 1em);
+          .color(@inherit, @white);
+          border: @normalBorder;
+          .bradius(7px);
+        }
+      }
+      input[type=checkbox]:checked{
+        &+ span:after {
+          @half : ((@normalFontSize*1.5) - @normalFontSize)/2;
+          .pos(-@half, (40px - @normalFontSize));
+        }
+        &+ span:before {
+          .color(@inherit, @buttonBackground);
+        }
+        &~ span.off {
+          display:none;
+        }
+        &+ span.on {
+          display:block;
+        }
+      }
+    }
+  }
+}
+//panel
+.hoda {
+  .frame {
+    > .panel-container {
+      margin-top:25px;
+    }
+  }
+  .panel-container {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+  }
+  .panel-horizontal {
+    position: relative;
+    &[data-resize=true] {
+      border-right:1px solid @panelHandleColor;
+    }
+    > .handle {
+      opacity:0;
+      .contentblockabs();
+      .topright();
+      .dimension(5px, 100%);
+      margin: 0;
+      cursor:  col-resize;
+      z-index:9;
+      .color(@inherit, @buttonColor);
+    }
+  }
+  .panel-vertical {
+    position: relative;
+    &[data-resize=true] {
+      border-top:1px solid @panelHandleColor;
+    }
+    > .handle {
+      opacity:0;
+      .contentblockabs();
+      .topleft();
+      .dimension(100%, 5px);
+      margin: 0;
+      cursor:  row-resize;
+      z-index:9;
+      .color(@inherit, @buttonColor);
+    }
+  }
+}
+//select
+.hoda {
+  select {
+    cursor: pointer;
+    .color(@inherit, @white);
+  }
+  .hoda-select {
+    position:relative;
+    padding:3px;
+    margin:0;
+    cursor: pointer;
+    .color(@inherit, @backgroundColor);
+    border: @normalBorder;
+    &:before {
+      .contentblockabs();
+      top:0.5em;
+      right:3px;
+      .dimension(1em, 1em);
+      border-top:0.5em solid @buttonColor;
+      border-left:0.5em solid transparent;
+      border-right:0.5em solid transparent;
+      box-sizing: border-box;
+
+    }
+    > span, > ul > li {
+      font-weight:bold;
+      color:@labelColor;
+    }
+    > ul {
+      .blockabsolute();
+      .topleft();
+      width:100%;
+      height:auto;
+      padding:3px;
+      .color(@inherit, @backgroundColor);
+      border: @normalBorder;
+      .boxshadow();
+      z-index: 999;
+      > li {
+        padding:3px;
+      }
+      > li[data-selected=true] {
+        .color(@buttonColor, lighten(@buttonBackground, 10%));
+      }
+      > li:hover {
+        .color(@buttonColor, @buttonBackground);
+      }
+    }
+  }
+}
+//Spinner
+.hoda {
+  .hoda-spinner {
+    position:relative;
+    margin:0;
+    height:1em;
+    .spinner-line {
+      margin:0;
+      padding:0;
+      .contentblockabs();
+      top:50%;
+      right:0;
+      .dimension(100%, 7px);
+      border: @normalBorder;
+      .radius();
+    }
+    .spinner-filler {
+      margin:0;
+      padding:0;
+      .contentblockabs();
+      .topleft();
+      .color(@inherit, @buttonBackground);
+      height:100%;
+      width:0%;
+    }
+    .spinner-button {
+      margin:0;
+      padding:0;
+      .contentblockabs();
+      .topleft();
+      .dimension(1.5em, 1.5em);
+      .color(@inherit, @backgroundColor);
+      border: @normalBorder;
+      .bradius(50%);
+      .boxshadow();
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .spinner-label {
+      margin:0;
+      padding:0;
+      display:inline-block;
+      font-weight: bold;
+      .color(@labelColor, @inherit);
+      box-sizing: border-box;
+    }
+  }
+}
+
+//Menu bar
+.hoda {
+  .menubar {
+    margin:0;
+    padding:0;
+   .dimension(100%, auto);
+   .color(@menuColor, @menuBackColor);
+   .boxshadow();
+   cursor: default;
+   ul, li {
+     &::selection {
+       .color(@inherit, transparent);
+     }
+   }
+   > ul {
+     margin:0;
+     padding:0;
+     position:relative;
+     >li {
+       position:relative;
+       display:inline-block;
+       margin:0 5px;
+       padding:7px;
+       &:hover {
+         .color(darken(@menuColor, 10%), @menuHoverColor);
+         >ul {
+           display:block;
+         }
+       }
+       >ul {
+         display:none;
+         position:absolute;
+         .pos(100%, 0);
+         .color(darken(@menuColor, 10%), @menuHoverColor);
+         .boxshadow();
+         >li {
+           position:relative;
+           padding:10px 26px;
+           min-width:150px;
+           &.menuitem-normal:hover, &.menuitem-check:hover {
+             .color(@menuColor, @menuBackColor);
+           }
+           &.menuitem-separator {
+             height:2px;
+             border-bottom:1px solid lighten(@menuColor, 35%);
+             margin:3px 0;
+             padding:0;
+           }
+           .menuitem-icon {
+             margin:0;
+             padding:10px;
+             .blockabsolute();
+             .topleft();
+             .dimension(16px, 16px);
+           }
+           &.menuitem-check .menuitem-icon {
+             opacity:0;
+           }
+         }
+       }
+     }
+   }
+  }
+}
